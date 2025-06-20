@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookReadingManager.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,8 @@ namespace BookReadingManager.Application.DTOs
         public DateTime PublishedDate { get; set; }
         public string ISBN { get; set; } = string.Empty;
         public decimal Price { get; set; }  
-        public string Format { get; set; } = string.Empty;
-        public string Status { get; set; } = string.Empty;
+        public BookFormat Format { get; set; }
+        public ReadingStatus Status { get; set; }
         public string Notes { get; set; } = string.Empty;
     }
 }

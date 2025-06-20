@@ -25,6 +25,14 @@ namespace BookReadingManager.Application.Validators
                 .Matches(@"^\d{9}[\dX]$|^\d{13}$").WithMessage("ISBN must be a valid 10 or 13 digit number.");
             RuleFor(x => x.Price).GreaterThan(0).WithMessage("Price must be greater than 0.")
                 .WithMessage("Price must have a maximum of 2 decimal places.");
+            RuleFor(x => x.Format)
+                .IsInEnum()
+                .WithMessage("Formato inválido. Os valores permitidos são: Fisico, Kindle e PDF");
+
+            RuleFor(x => x.Status)
+                .IsInEnum()
+                .WithMessage("Status inválido. Os valores permitidos são: Desejado, QueroLer, Lendo, Lido");
+
         }
     }
 }
